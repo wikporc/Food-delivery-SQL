@@ -17,7 +17,7 @@ def generate_dead_zones_map_takeaway(output_dir='analysis/takeaway'):
 
     # Load geocoded restaurant postal codes
     if not os.path.exists(RESTAURANT_POSTAL_CODES_CSV):
-        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Ensure 6_geocode_restaurants.py has been run.")
+        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Ensure 2_geocode_restaurants.py has been run.")
         return
 
     df_restaurants_geo = pd.read_csv(RESTAURANT_POSTAL_CODES_CSV)
