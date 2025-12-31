@@ -40,7 +40,7 @@ def analyze_restaurants_per_location_ubereats(output_dir='analysis/ubereats'):
     # Load geocoded restaurant postal codes
     geocoded_restaurants_csv = os.path.join(output_dir, 'restaurant_postal_codes.csv')
     if not os.path.exists(geocoded_restaurants_csv):
-        print(f"Error: {geocoded_restaurants_csv} not found. Please run 7_geocode_restaurants.py first.")
+        print(f"Error: {geocoded_restaurants_csv} not found. Please run 2_geocode_restaurants.py first.")
         return
 
     df_restaurants = pd.read_csv(geocoded_restaurants_csv)

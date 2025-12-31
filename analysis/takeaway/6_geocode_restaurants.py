@@ -7,7 +7,7 @@ import json
 from tqdm import tqdm
 
 OUTPUT_CSV = 'analysis/takeaway/restaurant_postal_codes.csv' # Output file
-CHECKPOINT_BATCH_SIZE = 10 # How many restaurants to geocode before saving a checkpoint
+CHECKPOINT_BATCH_SIZE = 100 # How many restaurants to geocode before saving a checkpoint
 
 
 def get_postal_code_from_nominatim(lon, lat):
