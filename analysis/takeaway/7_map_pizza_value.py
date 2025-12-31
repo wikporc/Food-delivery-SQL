@@ -66,7 +66,7 @@ def analyze_pizza_prices_by_postal_code_for_map(db_path, min_pizza_count=10):
 
     # Load restaurant postal codes from the pre-generated CSV
     if not os.path.exists(RESTAURANT_POSTAL_CODES_CSV):
-        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Please run 6_geocode_restaurants.py first.")
+        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Please run 2_geocode_restaurants.py first.")
         return pd.DataFrame(columns=['postalCode', 'avg_price_per_sq_cm', 'pizza_count'])
         
     restaurants_postal_codes_df = pd.read_csv(RESTAURANT_POSTAL_CODES_CSV)
