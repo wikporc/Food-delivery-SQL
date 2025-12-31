@@ -44,7 +44,7 @@ def analyze_pizza_prices_by_postal_code_for_map_ubereats(db_path, min_pizza_coun
     conn.close()
 
     if not os.path.exists(RESTAURANT_POSTAL_CODES_CSV):
-        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Please run 7_geocode_restaurants.py first.")
+        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Please run 2_geocode_restaurants.py first.")
         return pd.DataFrame(columns=['postalCode', 'avg_price_per_sq_cm', 'pizza_count'])
         
     df_restaurants_geo = pd.read_csv(RESTAURANT_POSTAL_CODES_CSV)

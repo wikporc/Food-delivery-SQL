@@ -66,7 +66,7 @@ def analyze_pizza_prices_by_postal_code_for_map(db_path, min_pizza_count=10):
 
     # Load restaurant postal codes from the pre-generated CSV
     if not os.path.exists(RESTAURANT_POSTAL_CODES_CSV):
-        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Please run 7_geocode_restaurants.py first.")
+        print(f"Error: {RESTAURANT_POSTAL_CODES_CSV} not found. Please run 6_geocode_restaurants.py first.")
         return pd.DataFrame(columns=['postalCode', 'avg_price_per_sq_cm', 'pizza_count'])
         
     restaurants_postal_codes_df = pd.read_csv(RESTAURANT_POSTAL_CODES_CSV)
@@ -182,6 +182,6 @@ def generate_pizza_value_choropleth_map(db_path, output_path='analysis/takeaway/
 
 if __name__ == '__main__':
     db_path = 'databases/takeaway.db'
-    temp_dir = os.environ.get('temp_dir', '/home/wiktor/.gemini/tmp/70c41c28bb6a7f6eeeb1eb23e0e3c8a2e391ae6c7c2edf4f76e6dd2ce5b63ec3') # Fallback to /tmp if not set
+    temp_dir = os.environ.get('temp_dir', '/tmp') # Fallback to /tmp if not set
     
     generate_pizza_value_choropleth_map(db_path)
