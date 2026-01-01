@@ -22,7 +22,8 @@ def analyze_price_distribution_combined(combined_menu_items_csv, output_dir='ana
 
     # Create the histogram
     plt.figure(figsize=(10, 6))
-    plt.hist(df['price'], bins=50, edgecolor='black')
+    plt.hist(df['price'], bins=1000, edgecolor='black')
+    plt.xlim(0,50)
     plt.title('Price Distribution of Menu Items (Combined Platforms)')
     plt.xlabel('Price (in EUR)')
     plt.ylabel('Number of Items')

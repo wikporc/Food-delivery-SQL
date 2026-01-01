@@ -85,11 +85,13 @@ def analyze_pizza_prices_combined(combined_restaurants_csv, combined_menu_items_
     prices_per_cm2 = [item[5] for item in pizza_analysis]
     if prices_per_cm2:
         plt.figure(figsize=(10, 6))
-        plt.hist(prices_per_cm2, bins=150, edgecolor='black', range=(0, 0.06)) # Set a reasonable range
+
+        plt.hist(prices_per_cm2, bins=30, edgecolor='black', range=(0, 0.06)) # Set a reasonable range
         plt.title('Distribution of Pizza Price per cm² (Combined Platforms)')
         plt.xlabel('Price per cm² (€)')
         plt.ylabel('Number of Pizzas')
         plt.grid(axis='y', alpha=0.75)
+        plt.xlim(0,0.05)
         plt.savefig(os.path.join(output_dir, 'price_per_cm2_distribution.png'))
         plt.close()
 
